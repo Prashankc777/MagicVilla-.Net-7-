@@ -8,7 +8,7 @@ namespace MagicVillaAPi.Data
         {
             new VillaDto()
             {
-                Id = 1, Name = "Pool view"
+                Id = 1, Name = "Pool view" 
             },
             new VillaDto()
             {
