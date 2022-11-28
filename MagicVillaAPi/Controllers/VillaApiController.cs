@@ -1,4 +1,5 @@
 ﻿using MagicVillaAPi.Data;
+using MagicVillaAPi.Logging;
 using MagicVillaAPi.Models;
 using MagicVillaAPi.Models.DTO;
 using Microsoft.AspNetCore.Mvc;
@@ -8,9 +9,8 @@ namespace MagicVillaAPi.Controllers
     [ApiController , Route("api/villaAPI")]
     public class VillaApiController : ControllerBase
     {
-        private readonly ILogger<VillaApiController> _logger;
-
-        public VillaApiController(ILogger<VillaApiController> logger)
+        private readonly Ilogging _logger;
+        public VillaApiController(Ilogging logger)
         {
             _logger = logger;
         }
@@ -29,6 +29,7 @@ namespace MagicVillaAPi.Controllers
         {
             if (id == 0)
             {
+                _logger.Log("Get Villas" , "");
                 return BadRequest();
             }
 
